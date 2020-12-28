@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Zahlenraten</title>
+  </head>
+  <body>
+    <header><h1>JavaScript Spiel: Zahlen raten</h1></header>
+    <main>
+      <div id="form_input">
+        <fieldset>
+          <legend>User-Eingaben</legend>
+          <h4>Eingabe</h4>
+          <div class="form_line">
+            <label for="ceiling">Obergrenze: </label>
+            <input id="ceiling" type="text" />
+          </div>
+          <div class="form_line">
+            <label for="versuche">Versuche: </label>
+            <input id="versuche" type="text" />
+          </div>
+          <div class="form_line">
+            <label for="zahl">Zahl: </label>
+            <input id="zahl" type="text" />
+          </div>
+          <div class="form_line">
+            <button type="button" name="start_button" value="start" onclick="">
+              Starten
+            </button>
+          </div>
+        </fieldset>
+      </div>
+      <div id="game_output">
+        <h4>Spielausgabe:</h4>
+        <div id="screen"></div>
+      </div>
+    </main>
+    <script src="logic.js"></script>
+  </body>
+</html>
