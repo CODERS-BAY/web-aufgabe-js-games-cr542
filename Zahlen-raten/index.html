@@ -26,7 +26,12 @@
             <input id="zahl" type="text" />
           </div>
           <div class="form_line">
-            <button type="button" name="start_button" value="start" onclick="">
+            <button
+              type="button"
+              name="start_button"
+              value="start"
+              onclick="play()"
+            >
               Starten
             </button>
           </div>
@@ -34,6 +39,8 @@
       </div>
       <div id="game_output">
         <h4>Spielausgabe:</h4>
+        <div id="randNr"></div>
+        <div id="usrNr"></div>
         <div id="screen"></div>
       </div>
     </main>
