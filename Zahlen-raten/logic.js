@@ -32,6 +32,7 @@ function createRandomNr() {
     let nr = Math.floor(Math.random() * getCeiling())
     console.log("[*] Created random number: "+ nr)
     // screen.innerHTML = "[*] Die generierte Zahl für diese Runde ist: "+ nr;
+    compNr.innerText = nr;
     return nr;
 }
 
