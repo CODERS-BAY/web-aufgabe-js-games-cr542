@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Codebreaker</title>
+  </head>
+  <body>
+    <header><h1>JavaScript Spiel: Codebreaker</h1></header>
+    <main>
+      <br />
+      <p>
+        Ziel ist es, einen dreistelligen Zahlencode zu erraten (wie ein
+        Vorhängeschloss). Der Zahlencode wird zufällig generiert. Du hast 12
+        Versuche, um die richtige dreistellige Kombination zu erraten.
+      </p>
+      <br />
+      <div id="form_input">
+        <fieldset>
+          <legend>User-Eingabe</legend>
+          <h4>Eingabe</h4>
+          <p>Gib hier deinen dreistelligen Code ein:</p>
+          <div class="form_line">
+            <label for="valueUsr">Dein Code: </label>
+            <input id="valueUsr" type="text" />
+          </div>
+
+          <div class="form_line">
+            <button
+              type="button"
+              name="start_button"
+              value="start"
+              onclick="play()"
+            >
+              Starten
+            </button>
+          </div>
+        </fieldset>
+      </div>
+      <div id="game_output">
+        <h4>Spielausgabe:</h4>
+        <div id="rounds"></div>
+      </div>
+    </main>
+    <script src="logic.js"></script>
+  </body>
+</html>
