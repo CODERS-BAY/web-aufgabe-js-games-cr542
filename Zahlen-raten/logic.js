@@ -1,5 +1,3 @@
-const screen = document.getElementById("screen");
-
 let userNumber;
 let rounds;
 
