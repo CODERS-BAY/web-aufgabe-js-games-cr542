@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Schere-Stein-Papier</title>
+  </head>
+  <body>
+    <header><h1>JavaScript Spiel: Schere-Stein-Papier</h1></header>
+    <main>
+      <br />
+      <p id="intro">
+        Ziel ist es, den Computer im Spiel "Schere-Stein-Papier" zu besiegen.<br />
+        Um zu beginnen, triff eine Wahl und klicke auf "Bestätigen". Dann drücke
+        auf Start und schau was passiert!
+      </p>
+      <br />
+      <div id="form_input">
+        <fieldset>
+          <legend>User-Eingabe</legend>
+          <h4>Eingabe</h4>
+          <p>Triff eine Entscheidung:</p>
+          <div class="form_line">
+            <input type="radio" id="schere" name="choice" value="Schere" />
+            <label for="schere">Schere</label>
+          </div>
+          <div class="form_line">
+            <input type="radio" id="stein" name="choice" value="Stein" />
+            <label for="stein">Stein</label>
+          </div>
+          <div class="form_line">
+            <input type="radio" id="papier" name="choice" value="Papier" />
+            <label for="papier">Papier</label>
+          </div>
+          <div class="form_line">
+            <button
+              type="button"
+              name="play_button"
+              value="play"
+              onclick="play()"
+            >
+              Spiel starten
+            </button>
+            <button
+              type="button"
+              name="chce_button"
+              value="chce"
+              onclick="getUserChoice()"
+            >
+              Bestätigen
+            </button>
+          </div>
+        </fieldset>
+      </div>
+      <div id="game_output">
+        <h4>Spielausgabe:</h4>
+        <div id="userChoice"></div>
+        <br />
+        <strong><div id="messageWinFail"></div></strong>
+      </div>
+    </main>
+    <script src="logic.js"></script>
+  </body>
+</html>
