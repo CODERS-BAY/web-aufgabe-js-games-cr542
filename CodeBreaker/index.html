@@ -13,7 +13,12 @@
       <p>
         Ziel ist es, einen dreistelligen Zahlencode zu erraten (wie ein
         Vorhängeschloss). Der Zahlencode wird zufällig generiert. Du hast 12
-        Versuche, um die richtige dreistellige Kombination zu erraten.
+        Versuche, um die richtige dreistellige Kombination zu erraten.<br /><br />
+        ANLEITUNG: Drücke "Start" um das Spiel zu beginnen. Mit "Code
+        überprüfen" kannst du den jeweiligen Code überprüfen. Wenn dieser mit
+        der Zufallszahl übereinstimmt, hast du gewonnen und erhältst eine
+        Nachricht. Wenn du noch eine Runde spielen willst, drücke auf "Neues
+        Spiel".
       </p>
       <br />
       <div id="form_input">
@@ -31,16 +36,39 @@
               type="button"
               name="start_button"
               value="start"
-              onclick="play()"
+              onclick="start()"
             >
-              Starten
+              Spiel starten
+            </button>
+            <button
+              type="button"
+              name="nextTry_button"
+              value="nextTry"
+              onclick="check()"
+            >
+              Code überprüfen
+            </button>
+            <button
+              type="button"
+              name="reset_button"
+              value="reset"
+              onclick="reset()"
+            >
+              Neues Spiel
             </button>
           </div>
         </fieldset>
       </div>
       <div id="game_output">
         <h4>Spielausgabe:</h4>
-        <div id="rounds"></div>
+        <div id="gameStatus"></div>
+        <br />
+        <div id="currentRound"></div>
+        <div id="remainingRounds"></div>
+        <br />
+        <div id="playerCurrentValue"></div>
+        <br />
+        <b><div id="winYesNo"></div></b>
       </div>
     </main>
     <script src="logic.js"></script>

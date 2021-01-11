@@ -3,6 +3,20 @@ let compValueTwo;
 let compValueThree;
 
 let trys = 0;
+let remaining = 12;
+let win = false;
+let running = false;
+
+gameStatus.innerText = getGameStatus();
+currentRound.innerText = "Aktuelle Runde: ";
+remainingRounds.innerText = "Verbleibende Versuche: "+remaining;
+playerCurrentValue.innerText = "Dein Versuch:";
+winYesNo.innerText = "Hier wird dein Status angezeigt.";
+
+function getGameStatus() {
+    if(running) { return "Spiel wurde gestartet." }
+    else { return "Spiel wurde beendet/nicht gestartet." }
+}
 
 function createCompValue() {
     let tmp = Math.random() * (999 - 111) + 111;
@@ -12,12 +26,7 @@ function createCompValue() {
 
 function getUserInput() {
     let tmp = valueUsr.value;
-    console.log("Userinput was read successfully.");
     return tmp;
-}
-
-function split(value) {
-
 }
 
 function isEqual(playerVal, compVal) {
@@ -28,17 +37,46 @@ function isEqual(playerVal, compVal) {
     }
 }
 
-function play() {
+function start() {
     computer = createCompValue();
-    player = getUserInput();
-        
     console.log("Computer value is: "+computer);
-    console.log("Player value is: "+player);
+    gameStatus.innerText = "Spiel wurde geladen. Du kannst jetzt beginnen!";
+    running = true;
+}
 
-    compValueOne = computer.charAt(0);
-    compValueTwo = computer.charAt(1);
-    compValueThree = computer.charAt(2);
+function check() {
+    player = getUserInput();
+    console.log("Player value is now: "+player);
+    gameStatus.innerText = getGameStatus();
+    currentRound.innerText = "Aktuelle Runde: "+trys;
+    remainingRounds.innerText = "Verbleibende Versuche: "+remaining
+    playerCurrentValue.innerText = "Dein Versuch: "+player;
+    if(trys < 12 && win != true) {
+        if(isEqual(player, computer)) {
+            win = true;
+            console.log("Player won => value is: "+value);
+            winYesNo.innerText = "Gratuliere, du hast gewonnen!";
+            running = false;
+            return;
+        } else {
+            console.log("Round "+trys+" was not successful. Continuing competition.");
+            winYesNo.innerText = "Runde nicht erfolgreich.";
+        }
+    } else {
+        winYesNo.innerText = "Du hast leider verloren.";
+        running = false;
+        return;
+    }
+    trys += 1;
+    remaining -= 1;
 
-    // Player must guess the first character of computers value - 12 trys
+}
 
+function reset() {
+    trys = 0;
+    win = false;
+    remaining = 12;
+    running = false;
+
+    winYesNo.innerText = "Neues Spiel wurde geladen. Drücke auf -Spiel starten- um zu beginnen!";
 }
